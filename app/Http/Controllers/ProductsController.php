@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Products;
 use Illuminate\Http\Request;
 
@@ -14,17 +15,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        Products::create(['tshirt' => 'Polo', 'quantity' => '13','price' => '3,99','information' => 'blackffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff','seller' => 'alehandro',]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Products::all();
     }
 
     /**
@@ -35,51 +26,52 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tshirt'=>'required',
+            'quantity'=>'required',
+            'price'=>'required',
+            'information'=>'required',
+            'seller'=>'required',
+            'image-url'=>'required'
+        ]);
+
+        return Products::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Products  $products
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Products $products)
+    public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Products  $products
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Products $products)
-    {
-        //
+        return Products::find($id);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Products  $products
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $products)
+    public function update(Request $request, $id)
     {
-        //
+        $product = Products::find($id);
+        $product->update($request->all());
+        return $product;
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Products  $products
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Products $products)
+    public function destroy($id)
     {
-        //
+        return Products::destroy($id);
     }
 }

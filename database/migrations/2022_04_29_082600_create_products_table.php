@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('tshirt');
-            $table->string('quantity');
-            $table->string('price');
+            $table->integer('quantity');
+            $table->decimal('price');
             $table->string('information');
             $table->string('seller');
+            $table->string('image-url');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

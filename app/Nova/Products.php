@@ -61,8 +61,10 @@ class Products extends Resource
             Text::make('information')
                 ->sortable()
                 ->rules('required', 'max:255'),
-
             Text::make('seller')
+                ->sortable()
+                ->rules('required', 'max:255'),
+            Text::make('image-url')
                 ->sortable()
                 ->rules('required', 'max:255'),
         ];
