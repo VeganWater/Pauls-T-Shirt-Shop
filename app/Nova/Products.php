@@ -32,7 +32,7 @@ class Products extends Resource
      * @var array
      */
     public static $search = [
-        '_id',
+        'id',
     ];
 
     /**
