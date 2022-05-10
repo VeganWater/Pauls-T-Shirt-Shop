@@ -1,13 +1,43 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.div {
+
+    margin: 5px;
+    padding: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+    width: 15%;
+    margin-left: 20px;
+}
+
+.imgTshirt {
+    margin: 5px;
+}
+
+.divTshirts {
+    cursor: pointer;
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.divTshirt {
+    width: 10%;
+}
+
+.divInformation {
+    width: 70%;
+}
+
+.divQuantity {
+    width: 10%;
+}
+
+.divPrice {
+    width: 10%;
 }
